@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Service from '../Services/Service';
 import Banner from './Banner';
 
@@ -24,6 +25,10 @@ const Home = () => {
                         ></Service>)
                     }
                 </div>
+
+                <button className="custom-button">
+                    <Link to='/services'>See all services</Link>
+                </button>
             </div>
         </div>
     );
