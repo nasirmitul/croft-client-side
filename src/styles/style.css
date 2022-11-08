@@ -436,7 +436,53 @@ a {
 }
 
 /* =========================== Add Service =========================== */
-.add-service
+.add-service {
+    width: min(500px, 90%);
+    margin: auto;
+}
+
+.add-service .inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.add-service .inputs input,
+.add-service .inputs textarea {
+    padding: 15px;
+    background: transparent;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    outline: none;
+    font-size: .9rem;
+    transition: .4s;
+    color: var(--primary-700);
+}
+
+.add-service .inputs textarea {
+    height: 100px;
+}
+
+.add-service .inputs input:focus,
+.add-service .inputs textarea:focus {
+    border: 1px solid var(--primary-700);
+}
+
+.add-service .custom-button{
+    position:relative;
+    margin-top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-700);
+    border: 2px solid var(--text-light);
+    width: 100%;
+}
+
+.add-service .custom-button:hover{
+    background: transparent;
+    border: 2px solid var(--primary-700);
+}
 
 /* =========================== Footer =========================== */
 .footer {
