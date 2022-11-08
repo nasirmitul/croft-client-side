@@ -27,7 +27,8 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/service/service-detail/:id',
-                element: <ServiceDetail></ServiceDetail>
+                element: <ServiceDetail></ServiceDetail>,
+                loader: ({params})=>fetch(`http://localhost:5000/service/${params.id}`)
             },
             {
                 path: '/my-reviews',

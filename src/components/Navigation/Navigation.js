@@ -27,8 +27,8 @@ const Navigation = () => {
                 <div className="nav-links">
                     <NavLink to='/'>Home</NavLink>
                     <NavLink to='/services'>Services</NavLink>
-                    <NavLink className={user?'show-nav' : 'hide-nav'} to='/my-reviews'>My Reviews</NavLink>
                     <NavLink className={user?'show-nav' : 'hide-nav'} to='/add-service'>Add Service</NavLink>
+                    <NavLink className={user?'show-nav' : 'hide-nav'} to='/my-reviews'>My Reviews</NavLink>
                     <NavLink to='/blog'>Blog</NavLink>
                 </div>
                 <div className="get-started">
