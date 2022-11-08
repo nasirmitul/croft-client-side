@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Service = ({ service }) => {
 
-    const { serviceImage, serviceName, serviceDescription, servicePrice, serviceRatings } = service;
+    const { _id, serviceImage, serviceName, serviceDescription, servicePrice, serviceRatings } = service;
     return (
         <div>
             <div className='service'>
@@ -13,7 +13,7 @@ const Service = ({ service }) => {
                 </div>
                 <p className="service-name">{serviceName}</p>
                 <p className="service-description">
-                    {serviceDescription.slice(0, 100)} <span>... read more</span>
+                    {serviceDescription.slice(0, 100)} <Link className='see-more' to={`/service/service-detail/${_id}`}>... read more</Link>
                 </p>
 
                 <div className="price-rating">
@@ -25,7 +25,9 @@ const Service = ({ service }) => {
                 </div>
 
                 <div className="service-detail-button">
-                    <Link><button className="custom-button">Details</button></Link>
+                    <Link to={`/service/service-detail/${_id}`}>
+                    <button className="custom-button">Details</button>
+                    </Link>
                 </div>
             </div>
         </div>

@@ -347,7 +347,6 @@ a {
 
 .services .service:hover{
     box-shadow: var(--shadow);
-    transform: scale(1.01);
 }
 
 .services .service .service-img img{
@@ -372,6 +371,11 @@ a {
     color: var(--background-dark-200);
     margin: 10px 0;
     text-align: justify;
+}
+
+.services .service .service-description a{
+    color: var(--primary-700);
+    font-weight: 500;
 }
 
 .services .service .price-rating{

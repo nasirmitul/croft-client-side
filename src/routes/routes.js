@@ -5,6 +5,7 @@ import Register from "../components/Authentication/Register";
 import Blog from "../components/Blog/Blog";
 import ErrorPage from "../components/Error/ErrorPage";
 import Home from "../components/Home/Home";
+import ServiceDetail from "../components/Services/ServiceDetail";
 import Services from "../components/Services/Services";
 import Main from "../layouts/Main";
 
@@ -21,6 +22,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/services',
                 element: <Services></Services>
+            },
+            {
+                path: '/service/service-detail/:id',
+                element: <ServiceDetail></ServiceDetail>
             },
             {
                 path: '/blog',
