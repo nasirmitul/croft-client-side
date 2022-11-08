@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 
 const AddService = () => {
 
-    const time = new Date().toLocaleTimeString();
+    const time = new Date();
     const [ctime, setDate] = useState(time);
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        let time = new Date().toLocaleTimeString();
+        let time = new Date();
         setDate(time);
 
         const form = e.target;
@@ -28,7 +28,8 @@ const AddService = () => {
             serviceImage: service_img,
             servicePrice: service_price,
             serviceRatings: service_ratings,
-            serviceDescription: service_description
+            serviceDescription: service_description,
+            addedTime: ctime
         }
 
         console.log(addNewService);
@@ -62,7 +63,7 @@ const AddService = () => {
                     <input type="text" placeholder='Service Name' name='service_name' required />
                     <input type="text" placeholder='Service Image' name='service_img' required />
                     <input type="number" placeholder='Price' name='service_price' required />
-                    <input type="number" placeholder='Ratings' name='service_ratings' required />
+                    <input type="number" placeholder='Ratings' step="0.01" min="1" max="5" name='service_ratings' required />
                     <textarea name="service_description" placeholder='Service Description' required></textarea>
                 </div>
                 <button className='custom-button' type='submit'>Add new Service</button>
