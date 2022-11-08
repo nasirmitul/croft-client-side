@@ -1,0 +1,349 @@
+/* =========================== Basic Setup =========================== */
+:root {
+    --primary-700: #FFC238;
+    --primary-900: #FFA339;
+    --background-dark-200: #353D68;
+    --background-dark-500: #252A51;
+    --background-dark-700: #1A1F3D;
+    --background-dark-900: #12162c;
+    --text-light: #FDFEFE;
+    --text-dark: #2e2f3a;
+    --gray: #d3cece;
+    /* --shadow:  */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: min(1320px, 90%);
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.custom-button {
+    padding: 8px 20px;
+    background: transparent;
+    outline: none;
+    border-radius: 5px;
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 2px solid var(--gray);
+    transition: .5s;
+}
+
+.custom-button:hover {
+    background: transparent;
+    color: var(--primary-700);
+    border: 2px solid var(--primary-700);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background-dark-500);
+}
+
+
+
+/* =========================== Navbar =========================== */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.nav .logo a p {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary-700);
+    transition: .4s;
+}
+
+.nav .logo a p:hover {
+    color: var(--primary-900);
+}
+
+.nav .nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav .nav-links a {
+    color: var(--text-light);
+    font-weight: 400;
+    position: relative;
+}
+
+.nav .nav-links a.active::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: var(--primary-700);
+    left: 0;
+    bottom: -8px;
+}
+
+.user-profile {
+    position: relative;
+}
+
+.user-profile-img {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.user-profile .profile-click-popup {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -60px;
+}
+
+.user-profile .profile-click-popup::before {
+    content: '';
+    position: absolute;
+    border: 10px solid;
+    border-color: transparent transparent var(--gray) transparent;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 45px;
+}
+
+
+.user-profile .profile-click-popup .custom-button {
+    background: var(--primary-700);
+    color: var(--text-light);
+}
+
+.user-profile .profile-click-popup .custom-button:hover {
+    background: transparent;
+    color: var(--primary-700);
+}
+
+.popup-open {
+    display: block;
+}
+
+.popup-close {
+    display: none;
+}
+
+/* =========================== Register, Login, ForgetPass =========================== */
+.sign-account {
+    margin-top: 50px;
+    width: min(400px, 90%);
+    min-height: calc(100vh - 210px);
+}
+
+.sign-account .heading {
+    color: var(--text-light);
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.sign-account .heading span {
+    color: var(--primary-700);
+    font-size: 3rem;
+}
+
+.sign-account .change-to {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--gray);
+}
+
+.sign-account .change-to a {
+    font-weight: 600;
+    color: var(--primary-700);
+}
+
+.sign-account .inputs {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sign-account .inputs input {
+    padding: 15px;
+    background: transparent;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    outline: none;
+    font-size: .9rem;
+    transition: .4s;
+    color: var(--primary-700);
+}
+
+.sign-account .inputs input:focus {
+    border: 1px solid var(--primary-700);
+}
+
+.sign-account .action-button .sign-to-account {
+    margin-top: 30px;
+    padding: 12px;
+    background: var(--primary-700);
+    width: 100%;
+    color: var(--text-light);
+    transition: .5s;
+    border: 2px solid var(--text-light);
+}
+
+.sign-account .action-button .sign-to-account:hover {
+    background: transparent;
+}
+
+.sign-account .other-options .or-title {
+    position: relative;
+    text-align: left;
+    margin: 20px 0;
+    color: var(--gray);
+    font-size: .9rem;
+    font-weight: 400;
+}
+
+.sign-account .other-options .or-title::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 70%;
+    background: var(--gray);
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.sign-account .other-options .google .google-sign {
+    padding: 15px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: var(--text-light);
+    font-size: .9rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 2px solid var(--text-light);
+    transition: .5s;
+}
+
+.sign-account .other-options .google .google-sign:hover {
+    background: var(--primary-700);
+    color: var(--text-light);
+}
+
+.remember-forget {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.remember-forget .remember-me {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--primary-700);
+    cursor: pointer;
+}
+
+.remember-forget .remember-me input {
+    accent-color: var(--primary-700);
+}
+
+.remember-forget .forget-password {
+    color: var(--primary-700);
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+/* =========================== Footer =========================== */
+.footer {
+    margin-top: 50px;
+    /* color: var(--primary-700);
+    text-align: center; */
+}
+
+.footer .footer-main{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    background: var(--background-dark-700);
+    padding: 50px 200px;
+}
+
+.footer .footer-main .part-1{
+    width: 35%
+}
+
+.footer .footer-main .footer-part h4{
+    color: var(--text-light);
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.footer .footer-main .part-1 .logo h4{
+    color: var(--primary-700);
+    font-size: 2rem;
+    font-weight: 700;
+    
+}
+
+.footer .footer-main .part-1 .description{
+    color: var(--gray);
+    font-size: .9rem;
+}
+
+.footer .footer-main .part-2 .links,
+.footer .footer-main .part-3 .links,
+.footer .footer-main .part-4 .links{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+
+.footer .footer-main .part-2 .links a,
+.footer .footer-main .part-3 .links a,
+.footer .footer-main .part-4 .links a {
+    color: var(--gray);
+    font-weight: 400;
+    transition: .4s;
+}
+.footer .footer-main .part-2 .links a:hover,
+.footer .footer-main .part-3 .links a:hover,
+.footer .footer-main .part-4 .links a:hover {
+    color: var(--primary-700);
+}
+
+.footer .copyright{
+    background: var(--background-dark-900);
+    text-align: center;
+    color: var(--primary-700);
+    padding: 20px;
+}
