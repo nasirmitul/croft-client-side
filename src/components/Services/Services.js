@@ -11,7 +11,7 @@ const Services = () => {
     return (
         <div className='container'>
 
-            <div className="heading">
+            <div className="page-heading">
                 <p>Our All Services</p>
             </div>
 
@@ -20,7 +20,7 @@ const Services = () => {
                     services.map(service => <Service
                         service={service}
                         key={service._id}
-                    ></Service>)
+                    ></Service>).reverse()
                 }
             </div>
         </div>

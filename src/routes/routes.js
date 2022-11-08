@@ -1,10 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
+import AddService from "../components/AddService/AddService";
 import Forget from "../components/Authentication/Forget";
 import Login from "../components/Authentication/Login";
 import Register from "../components/Authentication/Register";
 import Blog from "../components/Blog/Blog";
 import ErrorPage from "../components/Error/ErrorPage";
 import Home from "../components/Home/Home";
+import MyReviews from "../components/MyReviews/MyReviews";
 import ServiceDetail from "../components/Services/ServiceDetail";
 import Services from "../components/Services/Services";
 import Main from "../layouts/Main";
@@ -26,6 +28,14 @@ export const routes = createBrowserRouter([
             {
                 path: '/service/service-detail/:id',
                 element: <ServiceDetail></ServiceDetail>
+            },
+            {
+                path: '/my-reviews',
+                element: <MyReviews></MyReviews>
+            },
+            {
+                path: '/add-service',
+                element: <AddService></AddService>
             },
             {
                 path: '/blog',

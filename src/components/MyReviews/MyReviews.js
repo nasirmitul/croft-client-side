@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Blog = () => {
+const MyReviews = () => {
     return (
         <div className='container'>
             <div className="page-heading">
-                <p>Blogs</p>
+                <p>My Reviews</p>
             </div>
         </div>
     );
 };
 
-export default Blog;
+export default MyReviews;

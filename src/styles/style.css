@@ -57,20 +57,20 @@ a {
     border: 2px solid var(--primary-700);
 }
 
-.heading{
-    background:var(--text-light);
+.page-heading {
+    background: var(--text-light);
     margin-bottom: 30px;
     padding: 30px;
 }
 
-.heading p{
+.page-heading p {
     position: relative;
     color: var(--primary-700);
     font-size: 1.5rem;
     font-weight: 600;
 }
 
-.heading p::after{
+.page-heading p::after {
     content: '';
     position: absolute;
     height: 2px;
@@ -103,13 +103,21 @@ a {
 
 .nav .nav-links {
     display: flex;
-    gap: 40px;
+    gap: 25px;
 }
 
 .nav .nav-links a {
     color: var(--text-light);
     font-weight: 400;
     position: relative;
+}
+
+.nav .nav-links a.show-nav {
+    display: block;
+}
+
+.nav .nav-links a.hide-nav {
+    display: none;
 }
 
 .nav .nav-links a.active::after {
@@ -302,7 +310,7 @@ a {
 
 /* =========================== Home =========================== */
 
-.home-heading{
+.home-heading {
     color: var(--text-light);
     margin: 50px 0 20px;
     font-weight: 400;
@@ -310,7 +318,7 @@ a {
     position: relative;
 }
 
-.home-heading::after{
+.home-heading::after {
     content: '';
     position: absolute;
     height: 2px;
@@ -326,14 +334,14 @@ a {
 
 
 /* =========================== Services =========================== */
-.services{
+.services {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: minmax(400px, auto);
     grid-gap: 20px;
 }
 
-.services .service{
+.services .service {
     background: var(--background-light);
     width: 100%;
     padding: 15px;
@@ -345,11 +353,11 @@ a {
     position: relative;
 }
 
-.services .service:hover{
+.services .service:hover {
     box-shadow: var(--shadow);
 }
 
-.services .service .service-img img{
+.services .service .service-img img {
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -357,7 +365,7 @@ a {
     border: 2px solid var(--text-light);
 }
 
-.services .service .service-name{
+.services .service .service-name {
     font-size: 1.5rem;
     font-weight: 400;
     color: var(--text-dark);
@@ -365,7 +373,7 @@ a {
     margin: 10px 0;
 }
 
-.services .service .service-description{
+.services .service .service-description {
     font-size: .9rem;
     font-weight: 400;
     color: var(--background-dark-200);
@@ -373,26 +381,28 @@ a {
     text-align: justify;
 }
 
-.services .service .service-description a{
+.services .service .service-description a {
     color: var(--primary-700);
     font-weight: 500;
 }
 
-.services .service .price-rating{
+.services .service .price-rating {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: .9rem;
 }
-.services .service .price-rating .price{
+
+.services .service .price-rating .price {
     color: var(--primary-900);
 }
-.services .service .price-rating .price span{
+
+.services .service .price-rating .price span {
     font-weight: 500;
     color: var(--background-dark-700);
 }
 
-.services .service .price-rating .ratings{
+.services .service .price-rating .ratings {
     color: var(--background-dark-700);
     display: flex;
     align-items: center;
@@ -400,24 +410,24 @@ a {
     font-weight: 500;
 }
 
-.services .service .price-rating .ratings .star{
+.services .service .price-rating .ratings .star {
     color: var(--primary-900);
 }
 
-.services .service .service-detail-button button{
+.services .service .service-detail-button button {
     width: 100%;
     margin-top: 20px;
     background: var(--primary-700);
     border: 2px solid var(--text-light);
 }
 
-.services .service .service-detail-button button:hover{
+.services .service .service-detail-button button:hover {
     border: 2px solid var(--primary-700);
     background: transparent;
     font-weight: 600;
 }
 
-.see-all-services{
+.see-all-services {
     margin-top: 40px;
     width: fit-content;
     position: relative;
@@ -432,7 +442,7 @@ a {
     text-align: center; */
 }
 
-.footer .footer-main{
+.footer .footer-main {
     display: flex;
     justify-content: space-between;
     gap: 30px;
@@ -441,32 +451,32 @@ a {
     padding: 50px 200px;
 }
 
-.footer .footer-main .part-1{
+.footer .footer-main .part-1 {
     width: 35%
 }
 
-.footer .footer-main .footer-part h4{
+.footer .footer-main .footer-part h4 {
     color: var(--text-light);
     font-size: 1.3rem;
     font-weight: 500;
     margin-bottom: 10px;
 }
 
-.footer .footer-main .part-1 .logo h4{
+.footer .footer-main .part-1 .logo h4 {
     color: var(--primary-700);
     font-size: 2rem;
     font-weight: 700;
-    
+
 }
 
-.footer .footer-main .part-1 .description{
+.footer .footer-main .part-1 .description {
     color: var(--gray);
     font-size: .9rem;
 }
 
 .footer .footer-main .part-2 .links,
 .footer .footer-main .part-3 .links,
-.footer .footer-main .part-4 .links{
+.footer .footer-main .part-4 .links {
     display: flex;
     flex-direction: column;
     gap: 3px;
@@ -480,13 +490,14 @@ a {
     font-weight: 400;
     transition: .4s;
 }
+
 .footer .footer-main .part-2 .links a:hover,
 .footer .footer-main .part-3 .links a:hover,
 .footer .footer-main .part-4 .links a:hover {
     color: var(--primary-700);
 }
 
-.footer .copyright{
+.footer .copyright {
     background: var(--background-dark-900);
     text-align: center;
     color: var(--primary-700);

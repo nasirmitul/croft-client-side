@@ -2,8 +2,10 @@ import React from 'react';
 
 const ServiceDetail = () => {
     return (
-        <div>
-            <h1>Service Detail</h1>
+        <div className='container'>
+            <div className="heading">
+                <p>Blogs</p>
+            </div>
         </div>
     );
 };

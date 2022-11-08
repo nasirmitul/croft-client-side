@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Blog = () => {
+const AddService = () => {
     return (
         <div className='container'>
             <div className="page-heading">
-                <p>Blogs</p>
+                <p>Add new service</p>
             </div>
         </div>
     );
 };
 
-export default Blog;
+export default AddService;
