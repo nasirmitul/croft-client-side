@@ -7,8 +7,8 @@ const Home = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/home/services')
-        .then(res => res.json())
-        .then(data => setServices(data));
+            .then(res => res.json())
+            .then(data => setServices(data));
     }, [])
 
     return (
@@ -16,19 +16,21 @@ const Home = () => {
             <Banner></Banner>
 
             <div className="our-services">
-                <h2>Our Services</h2>
+                <h2 className='home-heading'>Our Services</h2>
                 <div className="services">
                     {
                         services.map(service => <Service
-                        service={service}
-                        key={service._id}
+                            service={service}
+                            key={service._id}
                         ></Service>)
                     }
                 </div>
 
-                <button className="custom-button">
-                    <Link to='/services'>See all services</Link>
-                </button>
+                <Link to='/services'>
+                    <button className="custom-button see-all-services">
+                        See all Services
+                    </button>
+                </Link>
             </div>
         </div>
     );

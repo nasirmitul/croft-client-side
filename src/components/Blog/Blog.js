@@ -4,6 +4,9 @@ const Blog = () => {
     return (
         <div className='container'>
             <div className="blogs">
+            <div className="heading">
+                <p>Blogs</p>
+            </div>
                 <div className="blog-1">
                     
                 </div>
