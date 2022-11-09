@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AiFillStar } from 'react-icons/ai';
 import { AuthContext } from '../../contexts/UserContext';
@@ -7,7 +7,54 @@ const ServiceDetail = () => {
     const serviceDetail = useLoaderData();
     const { user } = useContext(AuthContext)
 
-    const { serviceName, serviceImage, servicePrice, serviceDescription, serviceRatings } = serviceDetail;
+    const { _id, serviceName, serviceImage, servicePrice, serviceDescription, serviceRatings } = serviceDetail;
+
+
+    const time = new Date();
+    const [ctime, setDate] = useState(time);
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const form = e.target;
+
+        let time = new Date();
+        setDate(time);
+
+        const service_review = form.add_new_review.value;
+
+        //have to get the current time
+        console.log(service_review);
+
+        const addNewReview = {
+            service_review,
+            service_id: _id,
+            user_name: user?.displayName,
+            user_email: user?.email,
+            review_added_time: ctime
+        }
+
+        console.log(addNewReview);
+
+        fetch('http://localhost:5000/reviews', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(addNewReview)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.acknowledged) {
+                    form.reset();
+                    alert('review added successfully');
+                }
+            })
+            .catch(err => console.log(err))
+    }
+
+
     return (
         <div className='container'>
             <div className="service-details">
@@ -32,7 +79,7 @@ const ServiceDetail = () => {
 
                 {
                     user ?
-                        <form action="">
+                        <form action="" onSubmit={handleSubmit}>
                             <textarea name="add_new_review" placeholder='Add a review' required></textarea>
                             <button className="custom-button">Add Review</button>
                         </form>
