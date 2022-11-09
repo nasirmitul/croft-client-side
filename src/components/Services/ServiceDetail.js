@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AiFillStar } from 'react-icons/ai';
 import { AuthContext } from '../../contexts/UserContext';
@@ -9,10 +9,24 @@ const ServiceDetail = () => {
 
     const { _id, serviceName, serviceImage, servicePrice, serviceDescription, serviceRatings } = serviceDetail;
 
-
     const time = new Date();
     const [ctime, setDate] = useState(time);
 
+
+    const [reviews, setReviews] = useState([]);
+    const url = `http://localhost:5000/reviews?service_id=${_id}`
+    console.log(_id);
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setReviews(data))
+    }, [])
+
+    console.log(reviews);
+
+    const { service_review, user_name, user_image } = reviews;
+
+    console.log(reviews.service_review, user_name, user_image);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -30,6 +44,7 @@ const ServiceDetail = () => {
             service_review,
             service_id: _id,
             user_name: user?.displayName,
+            user_image: user?.photoURL,
             user_email: user?.email,
             review_added_time: ctime
         }
@@ -89,19 +104,21 @@ const ServiceDetail = () => {
             </div>
 
             <div className="all-reviews">
-                <div className="review">
-                    <div className="reviewer-image">
-                        <img src={user?.photoURL} alt="" />
-                    </div>
-                    <div className="reviewer-name-review">
-                        <div className="reviewer-name">
-                            <p>{user?.displayName}</p>
+                {
+                    reviews.map(review => <div key={review._id} className="review">
+                        <div className="reviewer-image">
+                            <img src={review.user_image} alt="" />
                         </div>
-                        <div className="review-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt non fuga officiis culpa earum odio, exercitationem voluptatem commodi quam necessitatibus dignissimos sint perferendis quis tempore ratione temporibus natus labore nobis!</p>
+                        <div className="reviewer-name-review">
+                            <div className="reviewer-name">
+                                <p>{review.user_name}</p>
+                            </div>
+                            <div className="review-text">
+                                <p>{review.service_review}</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </div>)
+                }
             </div>
         </div>
     );
