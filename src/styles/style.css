@@ -544,6 +544,32 @@ a {
     border: 2px solid var(--primary-700);
 }
 
+/* View review ----------------- */
+.review{
+    display: flex;
+    gap: 30px;
+}
+
+.review .reviewer-image img{
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.review .reviewer-name-review .reviewer-name p{
+    color: var(--text-light);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.review .reviewer-name-review .review-text p{
+    font-size: .9rem;
+    color: var(--gray);
+    font-weight: 300;
+}
+
 
 /* =========================== Add Service =========================== */
 .add-service {

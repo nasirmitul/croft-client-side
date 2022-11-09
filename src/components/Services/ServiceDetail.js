@@ -28,13 +28,33 @@ const ServiceDetail = () => {
             </div>
 
             <div className="add-new-review">
-                <form action="">
-                    <textarea name="add_new_review" placeholder='Add a review' required></textarea>
-                    {
-                        user ? <button className="custom-button">Add Review</button> : <div>You are not logged in. Please go and <Link>Signin</Link> to add review</div>
-                    }
-                </form>
 
+
+                {
+                    user ?
+                        <form action="">
+                            <textarea name="add_new_review" placeholder='Add a review' required></textarea>
+                            <button className="custom-button">Add Review</button>
+                        </form>
+                        : <div>You are not logged in. Please go and <Link to='/login'>Signin</Link> to add review</div>
+                }
+
+            </div>
+
+            <div className="all-reviews">
+                <div className="review">
+                    <div className="reviewer-image">
+                        <img src={user?.photoURL} alt="" />
+                    </div>
+                    <div className="reviewer-name-review">
+                        <div className="reviewer-name">
+                            <p>{user?.displayName}</p>
+                        </div>
+                        <div className="review-text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt non fuga officiis culpa earum odio, exercitationem voluptatem commodi quam necessitatibus dignissimos sint perferendis quis tempore ratione temporibus natus labore nobis!</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
