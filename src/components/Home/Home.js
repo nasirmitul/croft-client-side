@@ -38,30 +38,30 @@ const Home = () => {
                 </Link>
             </div>
 
-            <section class="overview">
-                <div class="img">
+            <section className="overview">
+                <div className="img">
                     <img src={decor} alt="" />
                 </div>
 
-                <div class="overview-details">
-                    <div class="since">
-                        <div class="line"></div>
+                <div className="overview-details">
+                    <div className="since">
+                        <div className="line"></div>
                         <p>since from 2017</p>
                     </div>
-                    <div class="title">
+                    <div className="title">
                         <h1>My Service <span>Overview</span></h1>
                     </div>
-                    <div class="main-part">
-                        <div class="text">
+                    <div className="main-part">
+                        <div className="text">
                             <p>
                                 I am currently working on doing great wooden works. Like creating any objects or any kind of wooden decoration. I have been doing this since 2017. You can have my service by selecting any of the service in the service page mentioned.
                             </p>
                         </div>
-                        <div class="profile">
-                            <div class="ceo-img">
+                        <div className="profile">
+                            <div className="ceo-img">
                                 <img src={man} alt="" />
                             </div>
-                            <div class="profile-info">
+                            <div className="profile-info">
                                 <h4>Graham Hudson</h4>
                                 <p>Head of idea</p>
                             </div>

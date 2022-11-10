@@ -24,17 +24,14 @@ const Services = () => {
             <div className="page-heading">
                 <p>Our All Services</p>
             </div>
-
-            <PhotoProvider>
-                <div className="services">
-                    {
-                        services.map(service => <Service
-                            service={service}
-                            key={service._id}
-                        ></Service>).reverse()
-                    }
-                </div>
-            </PhotoProvider>
+            <div className="services">
+                {
+                    services.map(service => <Service
+                        service={service}
+                        key={service._id}
+                    ></Service>).reverse()
+                }
+            </div>
         </div>
     );
 };

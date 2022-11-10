@@ -2,7 +2,7 @@ import React from 'react';
 import { AiFillStar } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 // import 'react-photo-view/dist/react-photo-view.css';
-import { PhotoView } from 'react-photo-view';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const Service = ({ service }) => {
 
@@ -10,11 +10,13 @@ const Service = ({ service }) => {
     return (
         <div>
             <div className='service'>
-                <PhotoView>
-                    <div className="service-img">
-                        <img src={serviceImage} alt="" />
-                    </div>
-                </PhotoView>
+                <div className="service-img">
+                    <PhotoProvider>
+                        <PhotoView src={serviceImage}>
+                            <img src={serviceImage} alt="" />
+                        </PhotoView>
+                    </PhotoProvider>
+                </div>
                 <p className="service-name">{serviceName}</p>
                 <p className="service-description">
                     {serviceDescription.slice(0, 100)} <Link className='see-more' to={`/service/service-detail/${_id}`}>... read more</Link>
