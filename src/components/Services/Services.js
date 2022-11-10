@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/UserContext';
 import Spinner from '../Spinner/Spinner';
 import Service from './Service';
-import { PhotoProvider } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 
 

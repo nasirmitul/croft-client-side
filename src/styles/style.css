@@ -1051,8 +1051,6 @@ a {
 /* =========================== Footer =========================== */
 .footer {
     margin-top: 50px;
-    /* color: var(--primary-700);
-    text-align: center; */
 }
 
 .footer .footer-main {
@@ -1061,7 +1059,7 @@ a {
     gap: 30px;
     flex-wrap: wrap;
     background: var(--background-dark-700);
-    padding: 50px 200px;
+    padding: 50px;
 }
 
 .footer .footer-main .part-1 {

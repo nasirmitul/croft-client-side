@@ -3,32 +3,21 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div className='footer'>
+        <div className='footer container'>
             <div className="footer-main">
                 <div className="footer-part part-1">
                     <div className="logo"><Link to='/'><h4>Croft</h4></Link></div>
                     <p className="description">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum autem atque fugit ut culpa deleniti saepe dolorem nobis! Tempora, impedit?
+                    I am currently working on doing great wooden works. Like creating any objects or any kind of wooden decoration. I have been doing this since 2017. You can have my service by selecting any of the service in the service page mentioned.
                     </p>
-                </div>
-                <div className="footer-part part-2 services-links">
-                    <h4>Services</h4>
-                    <div className="links">
-                        <Link>Service 1</Link>
-                        <Link>Service 2</Link>
-                        <Link>Service 3</Link>
-                        <Link>Service 4</Link>
-                        <Link>Service 5</Link>
-                        <Link>Service 6</Link>
-                    </div>
                 </div>
                 <div className="footer-part part-3 important-links">
                     <h4>Options</h4>
                     <div className="links">
-                        <Link>Home</Link>
-                        <Link>Services</Link>
-                        <Link>My Reviews</Link>
-                        <Link>Blog</Link>
+                        <Link to='/'>Home</Link>
+                        <Link to='/services'>Services</Link>
+                        <Link to='/my-reviews'>My Reviews</Link>
+                        <Link to='/blog'>Blog</Link>
                     </div>
                 </div>
                 <div className="footer-part part-4 social-links">

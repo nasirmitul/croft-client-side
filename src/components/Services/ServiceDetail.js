@@ -17,7 +17,6 @@ const ServiceDetail = () => {
 
     const [reviews, setReviews] = useState([]);
     const url = `https://croft-server.vercel.app/reviews?service_id=${_id}`
-    console.log(_id);
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -25,8 +24,6 @@ const ServiceDetail = () => {
                 setReviews(data)
             })
     }, [reviews])
-
-    console.log(reviews);
 
     const handleSubmit = (e) => {
         e.preventDefault();
