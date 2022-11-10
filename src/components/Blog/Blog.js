@@ -1,6 +1,8 @@
 import React from 'react';
+import useTitle from '../../hooks/useTitle';
 
 const Blog = () => {
+    useTitle('Blog')
     return (
         <div className='container'>
             <div className="page-heading">
@@ -24,7 +26,8 @@ const Blog = () => {
                                     </div>
 
                                     <div class='post-text'>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, asperiores.</p>
+                                        <p>Where SQL databases are vertically scalable, NoSQL databases are horizontally scalable. SQL databases are table-based whereas NoSQL databases are key-value pairs/ document-based/ graph, or wide-column stores. SQL databases have fixed schema which is rigid while NoSQL databases have dynamic schema which is flexible. Among these, SQL databases are mostly used because they are better for fast analytical queries and multi-row transactions whose structure doesn't change frequently
+                                            or at all.</p>
                                     </div>
                                 </div>
 
@@ -52,7 +55,8 @@ const Blog = () => {
                                     </div>
 
                                     <div class='post-text'>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, asperiores.</p>
+                                        <p>JWT refers to 'JSON web token' which is used to securely transfer information over the web.
+                                            Because of its relatively small size, a JWT can be sent through a URL, through a POST parameter, or inside an HTTP header, and it is transmitted quickly. A JWT contains all the required information about an entity to avoid querying a database more than once. The recipient of a JWT also does not need to call a server to validate the token.</p>
                                     </div>
                                 </div>
 
@@ -80,7 +84,8 @@ const Blog = () => {
                                     </div>
 
                                     <div class='post-text'>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, asperiores.</p>
+                                        <p>Node is an interpreter or runtime environment for building server side and networking applications. On the other hand, javascript is a programming language for writing scripts on the website. While JavaScript runs only on browsers Nodejs can run JavaScript outside of browsers. JavaScript is mostly used on the client side whereas NodeJS is
+                                            mostly used on the server-side. Javascript is able to use HTML and modify DOM but Nodejs is not.</p>
                                     </div>
                                 </div>
 
@@ -92,7 +97,7 @@ const Blog = () => {
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class='post-link'>
                         <div class='post-wrap'>
                             <div class='post-image'>
@@ -109,7 +114,7 @@ const Blog = () => {
                                     </div>
 
                                     <div class='post-text'>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, asperiores.</p>
+                                        <p>Nodejs is Single-threaded which means making progress on many tasks at a time in a single sequence. It works with only one call stack that’s why it is single threaded.The event loop of Nodejs also runs on single thread. In Nodejs, only a single task is executed at a time and execution doesn't wait for the current request to complete rather it moves to the next request.</p>
                                     </div>
                                 </div>
 

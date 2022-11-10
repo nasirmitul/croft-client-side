@@ -4,8 +4,10 @@ import { FiEdit2 } from 'react-icons/fi';
 import { MdDelete } from 'react-icons/md';
 import { TiDeleteOutline } from 'react-icons/ti';
 import { Link } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const MyReviews = () => {
+    useTitle('My reviews')
     const { user, logoutUser } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
 

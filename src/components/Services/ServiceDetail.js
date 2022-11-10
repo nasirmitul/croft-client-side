@@ -2,8 +2,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AiFillStar } from 'react-icons/ai';
 import { AuthContext } from '../../contexts/UserContext';
+import useTitle from '../../hooks/useTitle';
 
 const ServiceDetail = () => {
+    useTitle('Service Details')
     const serviceDetail = useLoaderData();
     const { user } = useContext(AuthContext)
 

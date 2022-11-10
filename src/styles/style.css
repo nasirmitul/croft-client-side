@@ -330,6 +330,153 @@ a {
 }
 
 /* ---------- Banner ---------- */
+.banner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px 0;
+    gap: 30px;
+}
+
+.banner .banner-left{
+    width: 50%;
+}
+
+.banner .banner-left .title h1{
+    color: var(--primary-700);
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 70px;
+    margin-bottom: 30px;
+}
+
+.banner .banner-right{
+    width: 50%;
+}
+
+.banner .banner-right img{
+    width: 100%;
+}
+
+
+
+/* ---------- About my service ---------- */
+.overview {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.overview .img img {
+    width: clamp(250px, 40vw, 350px);
+}
+
+.overview-details {
+    min-width: 300px;
+    width: 600px;
+}
+
+.overview-details .since {
+    display: flex;
+    align-items: center;
+}
+
+.overview-details .since .line {
+    height: 2px;
+    width: 50px;
+    background: var(--primary-700);
+    margin-right: 15px;
+}
+
+.overview-details .since p {
+    color: var(--primary-700);
+}
+
+.overview-details .title h1 {
+    font-size: 2.2rem;
+    color: var(--text-light);
+}
+
+.overview-details .title h1 span {
+    color: var(--primary-700);
+}
+
+.overview-details .main-part {
+    margin-top: 50px;
+    background: var(--text-light);
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.overview-details .main-part .text p {
+    padding: 40px 30px;
+    background: var(--gray);
+}
+
+.overview-details .main-part .profile {
+    padding: 25px;
+    display: flex;
+    gap: 25px;
+}
+
+.overview-details .main-part .profile .ceo-img {
+    max-width: 50px;
+}
+
+.overview-details .main-part .profile .ceo-img img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.overview-details .main-part .profile .profile-info h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #353535;
+}
+
+.overview-details .main-part .profile .profile-info p {
+    font-size: .8rem;
+    color: #808080;
+}
+
+.overview-details .main-part .profile .signature {
+    position: relative;
+    top: -100px;
+    right: -240px;
+    width: 170px;
+    height: 0;
+    transform: rotate(-10deg);
+}
+
+
+@media only screen and (max-width: 460px) {
+    .overview-details .main-part .profile .signature {
+        display: none;
+    }
+}
+
+
+
+.get-service{
+    margin: 50px 0;
+    background: var(--background-dark-900);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;padding: 50px;
+    border-radius: 5px;
+}
+
+.get-service h1{
+    color: var(--text-light);
+    font-size: 3rem;
+    text-align: center;
+    line-height: 60px;
+}
 
 
 
@@ -968,4 +1115,20 @@ a {
     text-align: center;
     color: var(--primary-700);
     padding: 20px;
+}
+
+
+
+/* Loader */
+.loader{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--background-dark-700);
+    z-index: 5;
+    top: 0;
+    left: 0;
 }

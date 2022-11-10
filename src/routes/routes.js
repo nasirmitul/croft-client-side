@@ -43,7 +43,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/add-service',
-                element: <AddService></AddService>
+                element: <PrivateRoute><AddService></AddService></PrivateRoute>
             },
             {
                 path: '/blog',

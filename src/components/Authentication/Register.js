@@ -3,11 +3,13 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
 import app from '../../firebase/firebase.init';
+import useTitle from '../../hooks/useTitle';
 
 
 const auth = getAuth(app)
 
 const Register = () => {
+    useTitle('Register')
     const [showError, setShowError] = useState("");
     const { createUser, googleSign } = useContext(AuthContext)
 
@@ -36,8 +38,26 @@ const Register = () => {
                     console.log(error);
                 });
 
+                //get jwt token
+                const currentUser = {
+                    email: user?.email
+                }
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type' : 'application/json'  
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    localStorage.setItem('secret-token', data.token)
+                    navigate(from, { replace: true });
+                })
+
                 form.reset();
-                navigate(from, { replace: true });
+                // navigate(from, { replace: true });
             })
             .catch((error) => {
                 console.log(error);
@@ -56,7 +76,24 @@ const Register = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user);
-                navigate(from, { replace: true });
+                //get jwt token
+                const currentUser = {
+                    email: user?.email
+                }
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type' : 'application/json'  
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    localStorage.setItem('secret-token', data.token)
+                    navigate(from, { replace: true });
+                })
+                // navigate(from, { replace: true });
             }).catch((error) => {
                 console.log(error);
             });
