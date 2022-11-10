@@ -12,8 +12,8 @@ const MyReviews = () => {
     const [reviews, setReviews] = useState([]);
 
 
-    const url = `http://localhost:5000/my-reviews?user_email=${user?.email}`
-    // const url = `http://localhost:5000/my-reviews?user_email=nasirmitul28@gmail.com`
+    const url = `https://croft-server.vercel.app/my-reviews?user_email=${user?.email}`
+    // const url = `https://croft-server.vercel.app/my-reviews?user_email=nasirmitul28@gmail.com`
 
     useEffect(() => {
         fetch(url, {
@@ -36,7 +36,7 @@ const MyReviews = () => {
     const handleDelete = id => {
         const proceed = window.confirm("Are you sure you want to delete this review?")
         if (proceed) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://croft-server.vercel.app/reviews/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

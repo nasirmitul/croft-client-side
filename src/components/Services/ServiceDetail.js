@@ -16,7 +16,7 @@ const ServiceDetail = () => {
 
 
     const [reviews, setReviews] = useState([]);
-    const url = `http://localhost:5000/reviews?service_id=${_id}`
+    const url = `https://croft-server.vercel.app/reviews?service_id=${_id}`
     console.log(_id);
     useEffect(() => {
         fetch(url)
@@ -52,7 +52,7 @@ const ServiceDetail = () => {
 
         console.log(addNewReview);
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://croft-server.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

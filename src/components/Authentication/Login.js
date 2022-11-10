@@ -2,17 +2,26 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
 import useTitle from '../../hooks/useTitle';
+import Spinner from '../Spinner/Spinner';
 
 const Login = () => {
     useTitle('Login')
 
+
+
     const [showError, setShowError] = useState("");
-    const { loginUser, googleSign } = useContext(AuthContext)
+    const { loginUser, googleSign, loading } = useContext(AuthContext)
+
+
 
     const navigate = useNavigate();
     const location = useLocation();
 
     const from = location.state?.from?.pathname || '/';
+
+    if (loading) {
+        return <Spinner></Spinner>
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -34,19 +43,19 @@ const Login = () => {
                 const currentUser = {
                     email: user?.email
                 }
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://croft-server.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
-                        'content-type' : 'application/json'  
+                        'content-type': 'application/json'
                     },
                     body: JSON.stringify(currentUser)
                 })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    localStorage.setItem('secret-token', data.token)
-                    navigate(from, { replace: true });
-                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        localStorage.setItem('secret-token', data.token)
+                        navigate(from, { replace: true });
+                    })
                 form.reset();
             })
             .catch((error) => {
@@ -67,24 +76,24 @@ const Login = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user);
-                
+
                 //get jwt token
                 const currentUser = {
                     email: user?.email
                 }
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://croft-server.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
-                        'content-type' : 'application/json'  
+                        'content-type': 'application/json'
                     },
                     body: JSON.stringify(currentUser)
                 })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    localStorage.setItem('secret-token', data.token)
-                    navigate(from, { replace: true });
-                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        localStorage.setItem('secret-token', data.token)
+                        navigate(from, { replace: true });
+                    })
 
                 // navigate(from, { replace: true });
             }).catch((error) => {

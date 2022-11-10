@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
 import app from '../../firebase/firebase.init';
 import useTitle from '../../hooks/useTitle';
+import Spinner from '../Spinner/Spinner';
 
 
 const auth = getAuth(app)
@@ -11,12 +12,16 @@ const auth = getAuth(app)
 const Register = () => {
     useTitle('Register')
     const [showError, setShowError] = useState("");
-    const { createUser, googleSign } = useContext(AuthContext)
+    const { createUser, googleSign, loading } = useContext(AuthContext)
 
     const navigate = useNavigate();
     const location = useLocation();
 
     const from = location.state?.from?.pathname || '/';
+
+    if (loading) {
+        return <Spinner></Spinner>
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -42,7 +47,7 @@ const Register = () => {
                 const currentUser = {
                     email: user?.email
                 }
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://croft-server.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type' : 'application/json'  
@@ -80,7 +85,7 @@ const Register = () => {
                 const currentUser = {
                     email: user?.email
                 }
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://croft-server.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type' : 'application/json'  

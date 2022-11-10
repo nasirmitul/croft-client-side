@@ -30,7 +30,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/service/service-detail/:id',
                 element: <ServiceDetail></ServiceDetail>,
-                loader: ({params})=>fetch(`http://localhost:5000/service/${params.id}`)
+                loader: ({params})=>fetch(`https://croft-server.vercel.app/service/${params.id}`)
             },
             {
                 path: '/my-reviews',
@@ -39,7 +39,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/my-reviews/update-review/:id',
                 element: <UpdateMyReview></UpdateMyReview>,
-                loader: ({params}) => fetch(`http://localhost:5000/reviews/${params.id}`)
+                loader: ({params}) => fetch(`https://croft-server.vercel.app/reviews/${params.id}`)
             },
             {
                 path: '/add-service',

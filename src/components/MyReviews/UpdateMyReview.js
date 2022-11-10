@@ -18,7 +18,7 @@ const UpdateMyReview = () => {
             service_review: edited_value
         }
 
-        fetch(`http://localhost:5000/reviews/${updateReview._id}`, {
+        fetch(`https://croft-server.vercel.app/reviews/${updateReview._id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
