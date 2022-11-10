@@ -436,15 +436,16 @@ a {
 }
 
 /* =========================== Service Details =========================== */
-.service-details{
+.service-details {
     display: flex;
     gap: 50px;
 }
 
-.service-details .service-image{
+.service-details .service-image {
     width: 50%;
 }
-.service-details .service-image img{
+
+.service-details .service-image img {
     width: 100%;
     height: auto;
     object-fit: cover;
@@ -452,18 +453,18 @@ a {
     border-radius: 5px;
 }
 
-.service-details .service-other-details{
+.service-details .service-other-details {
     width: 50%;
 }
 
-.service-details .service-other-details .service-name{
+.service-details .service-other-details .service-name {
     color: var(--primary-700);
     font-size: 1.7rem;
     font-weight: 500;
     margin-bottom: 15px;
 }
 
-.service-details .service-other-details .service-price-ratings{
+.service-details .service-other-details .service-price-ratings {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -473,7 +474,7 @@ a {
     color: var(--text-light);
 }
 
-.service-details .service-other-details .service-price-ratings::after{
+.service-details .service-other-details .service-price-ratings::after {
     content: '';
     position: absolute;
     height: 1px;
@@ -482,25 +483,25 @@ a {
     bottom: 0px;
 }
 
-.service-details .service-other-details .part-title{
+.service-details .service-other-details .part-title {
     color: var(--gray);
     font-size: 1.3rem;
     font-weight: 400;
 }
 
-.service-details .service-other-details .service-description{
+.service-details .service-other-details .service-description {
     color: var(--text-light);
     font-weight: 300;
     font-size: .9rem;
 }
 
 /* Add review ----------------- */
-.add-new-review{
+.add-new-review {
     position: relative;
     margin-bottom: 50px;
 }
 
-.add-new-review::after{
+.add-new-review::after {
     content: '';
     position: absolute;
     height: 1px;
@@ -509,13 +510,13 @@ a {
     bottom: -20px;
 }
 
-.add-new-review form{
+.add-new-review form {
     margin-top: 50px;
     display: flex;
     flex-direction: column;
 }
 
-.add-new-review form textarea{
+.add-new-review form textarea {
     padding: 15px;
     background: transparent;
     border: 1px solid var(--gray);
@@ -528,49 +529,82 @@ a {
     margin-bottom: 10px;
 }
 
-.add-new-review form textarea:focus{
+.add-new-review form textarea:focus {
     border: 1px solid var(--primary-700);
 }
 
-.add-new-review form .custom-button{
+.add-new-review form .custom-button {
     width: fit-content;
     background: var(--primary-700);
     border: 2px solid var(--text-light);
 
 }
 
-.add-new-review form .custom-button:hover{
+.add-new-review form .custom-button:hover {
     background: transparent;
     border: 2px solid var(--primary-700);
 }
 
 /* View review ----------------- */
-.review{
+.review {
     display: flex;
     gap: 30px;
     margin-bottom: 25px;
 }
 
-.review .reviewer-image img{
+.review .reviewer-image img {
     height: 45px;
     width: 45px;
     object-fit: cover;
     border-radius: 50%;
 }
 
-.review .reviewer-name-review .reviewer-name p{
+.review .reviewer-name-review .reviewer-name p {
     color: var(--text-light);
     font-size: 1.1rem;
     font-weight: 500;
     margin-bottom: 5px;
 }
 
-.review .reviewer-name-review .review-text p{
+.review .reviewer-name-review .review-text p {
     font-size: .9rem;
     color: var(--gray);
     font-weight: 300;
 }
 
+/* My review ----------------- */
+.my-reviews .reviews {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    border: 1px solid var(--text-light);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.my-reviews .reviews .review-details .service-name,
+.my-reviews .reviews .review-details .service-review {
+    color: var(--text-light);
+}
+
+.my-reviews .reviews .review-details .service-name span,
+.my-reviews .reviews .review-details .service-review span {
+    color: var(--primary-700);
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.my-reviews .reviews .actions{
+    display: flex;
+    gap: 20px;
+}
+
+.my-reviews .reviews .actions .icons{
+    color: var(--text-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
 
 /* =========================== Add Service =========================== */
 .add-service {
@@ -606,8 +640,8 @@ a {
     border: 1px solid var(--primary-700);
 }
 
-.add-service .custom-button{
-    position:relative;
+.add-service .custom-button {
+    position: relative;
     margin-top: 50px;
     left: 50%;
     transform: translateX(-50%);
@@ -616,7 +650,7 @@ a {
     width: 100%;
 }
 
-.add-service .custom-button:hover{
+.add-service .custom-button:hover {
     background: transparent;
     border: 2px solid var(--primary-700);
 }

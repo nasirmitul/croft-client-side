@@ -24,10 +24,6 @@ const ServiceDetail = () => {
 
     console.log(reviews);
 
-    const { service_review, user_name, user_image } = reviews;
-
-    console.log(reviews.service_review, user_name, user_image);
-
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -41,6 +37,7 @@ const ServiceDetail = () => {
         console.log(service_review);
 
         const addNewReview = {
+            serviceName,
             service_review,
             service_id: _id,
             user_name: user?.displayName,
