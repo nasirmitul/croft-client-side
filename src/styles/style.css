@@ -606,6 +606,44 @@ a {
     cursor: pointer;
 }
 
+
+
+/* Edit review ----------------- */
+.edit-review{
+    border: 2px solid var(--text-light);
+    padding: 20px;
+    position: absolute;
+    z-index: 1;
+    background:var(--text-light);
+    border-radius: 3px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(600px, 90%);
+}
+
+.edit-review-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.edit-review-field{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.edit-review.show-update-popup{
+    display: block;
+}
+
+.edit-review.hide-update-popup{
+    display: none;
+}
+
+
 /* =========================== Add Service =========================== */
 .add-service {
     width: min(500px, 90%);

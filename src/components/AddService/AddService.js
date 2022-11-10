@@ -8,7 +8,6 @@ const AddService = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         let time = new Date();
         setDate(time);
 

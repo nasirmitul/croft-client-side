@@ -19,8 +19,10 @@ const ServiceDetail = () => {
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
-            .then(data => setReviews(data))
-    }, [])
+            .then(data => {
+                setReviews(data)
+            })
+    }, [reviews])
 
     console.log(reviews);
 
@@ -61,6 +63,7 @@ const ServiceDetail = () => {
                 if (data.acknowledged) {
                     form.reset();
                     alert('review added successfully');
+                    
                 }
             })
             .catch(err => console.log(err))

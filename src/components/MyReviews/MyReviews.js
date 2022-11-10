@@ -2,11 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/UserContext';
 import { FiEdit2 } from 'react-icons/fi';
 import { MdDelete } from 'react-icons/md';
+import { TiDeleteOutline } from 'react-icons/ti';
+import { Link } from 'react-router-dom';
 
 const MyReviews = () => {
     const { user } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
-
 
 
     // const url = `http://localhost:5000/my-reviews?user_email=${user?.email}`
@@ -18,25 +19,21 @@ const MyReviews = () => {
             .then(data => setReviews(data))
     }, [])
 
-    // console.log(reviews);
-
-
     const handleDelete = id => {
         const proceed = window.confirm("Are you sure you want to delete this review?")
-        if(proceed){
+        if (proceed) {
             fetch(`http://localhost:5000/reviews/${id}`, {
                 method: 'DELETE'
             })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if(data.acknowledged){
-                    alert('deleted successfully')
-                    const remaining = reviews.filter(review => review._id !== id);
-                    setReviews(remaining)
-                }
-            })
-
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.acknowledged) {
+                        alert('deleted successfully')
+                        const remaining = reviews.filter(review => review._id !== id);
+                        setReviews(remaining)
+                    }
+                })
         }
     }
 
@@ -57,7 +54,7 @@ const MyReviews = () => {
                                     <p className='service-review'><span>Review: </span>{review?.service_review}</p>
                                 </div>
                                 <div className="actions">
-                                    <FiEdit2 className='icons'></FiEdit2>
+                                    <Link to={`/my-reviews/update-review/${review._id}`}><FiEdit2 className='icons'></FiEdit2></Link>
                                     <MdDelete onClick={() => handleDelete(review._id)} className='icons'></MdDelete>
                                 </div>
                             </div>
@@ -65,6 +62,22 @@ const MyReviews = () => {
                     )
                 }
             </div>
+
+
+            {/* <div className={`edit-review ${showUpdate ? 'show-update-popup' : 'hide-update-popup'}`}>
+                <div className="edit-review-title">
+                    <h3>Edit This review</h3>
+                    <TiDeleteOutline onClick={() => { setShowUpdate(false) }}></TiDeleteOutline>
+                </div>
+                <div className="edit-review-field">
+                    <form action="" onSubmit={handleSubmit}>
+                        <input name='edited_value' type="text" defaultValue={defaultValue} required />
+                        <button className="custom-button">Edit</button>
+                    </form>
+                </div>
+            </div> */}
+
+
         </div>
     );
 };

@@ -7,6 +7,7 @@ import Blog from "../components/Blog/Blog";
 import ErrorPage from "../components/Error/ErrorPage";
 import Home from "../components/Home/Home";
 import MyReviews from "../components/MyReviews/MyReviews";
+import UpdateMyReview from "../components/MyReviews/UpdateMyReview";
 import ServiceDetail from "../components/Services/ServiceDetail";
 import Services from "../components/Services/Services";
 import Main from "../layouts/Main";
@@ -33,6 +34,11 @@ export const routes = createBrowserRouter([
             {
                 path: '/my-reviews',
                 element: <MyReviews></MyReviews>
+            },
+            {
+                path: '/my-reviews/update-review/:id',
+                element: <UpdateMyReview></UpdateMyReview>,
+                loader: ({params}) => fetch(`http://localhost:5000/reviews/${params.id}`)
             },
             {
                 path: '/add-service',
