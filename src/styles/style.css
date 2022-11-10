@@ -495,6 +495,18 @@ a {
     font-size: .9rem;
 }
 
+.please-login {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+.please-login a {
+    color: var(--primary-700);
+    font-weight: 500;
+}
+
 /* Add review ----------------- */
 .add-new-review {
     position: relative;
@@ -595,54 +607,74 @@ a {
     font-size: 1.1rem;
 }
 
-.my-reviews .reviews .actions{
+.my-reviews .reviews .actions {
     display: flex;
     gap: 20px;
 }
 
-.my-reviews .reviews .actions .icons{
+.my-reviews .reviews .actions .icons {
     color: var(--text-light);
     font-size: 1.5rem;
     cursor: pointer;
 }
 
+.my-reviews .no-reviews {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 100px 0;
+}
+
 
 
 /* Edit review ----------------- */
-.edit-review{
-    border: 2px solid var(--text-light);
-    padding: 20px;
-    position: absolute;
-    z-index: 1;
-    background:var(--text-light);
-    border-radius: 3px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: min(600px, 90%);
+.update-review .review-title p {
+    color: var(--text-light);
+    font-size: 1.3rem;
+    margin: 10px 0 40px;
+    font-weight: 400;
 }
 
-.edit-review-title{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
+.update-review .review-title p span {
+    color: var(--primary-700);
 }
 
-.edit-review-field{
+.update-review .update-form {
     display: flex;
     flex-direction: column;
+    width: min(500px, 90%);
     gap: 10px;
 }
 
-.edit-review.show-update-popup{
-    display: block;
+.update-review .update-form textarea {
+    padding: 15px;
+    background: transparent;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    outline: none;
+    font-size: .9rem;
+    transition: .4s;
+    color: var(--primary-700);
+    height: 100px;
+    margin-bottom: 10px;
 }
 
-.edit-review.hide-update-popup{
-    display: none;
+.update-review .update-form textarea:focus {
+    border: 1px solid var(--primary-700);
 }
 
+.update-review .update-form .custom-button {
+    width: fit-content;
+    padding: 8px 50px;
+    background: var(--primary-700);
+    border: 2px solid var(--text-light);
+}
+
+.update-review .update-form .custom-button:hover {
+    background: transparent;
+    color: var(--text-light);
+}
 
 /* =========================== Add Service =========================== */
 .add-service {
@@ -692,6 +724,182 @@ a {
     background: transparent;
     border: 2px solid var(--primary-700);
 }
+
+
+/* =========================== Blog =========================== */
+.blog-posts-wrap {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr !important;
+}
+
+.post-link {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.post-wrap {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: var(--text-light);
+    box-shadow: 0px 2px 20px rgba(120, 69, 249, 0.2);
+    transition: all .25s;
+    top: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.post-wrap:hover{
+    transform: translateY(-3px);
+}
+
+.post-body {
+    padding: 15px 20px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+
+.post-body-primary {
+    margin: 10px 0 10px 0;
+}
+
+.post-meta {
+    color: #7B7B7B;
+}
+
+.post-meta p {
+    font-size: .9rem;
+}
+
+.post-meta b {
+    font-weight: 500;
+}
+
+.post-title {
+    color: var(--primary-700);
+    padding: 5px 0 10px 0;
+}
+
+.post-title h2 {
+    font-size: 1.2rem;
+    line-height: 25px;
+    font-weight: 500;
+}
+
+.post-text p {
+    color: #7B7B7B;
+    line-height: 20px;
+    font-size: .9rem;
+}
+
+.post-body-secondary {
+    border-top: 1px solid var(--gray);
+}
+
+.post-category {
+    color: #7B7B7B;
+    padding: 15px 0 10px 0;
+}
+
+.post-category p {
+    font-size: .9rem;
+}
+
+/* .blog{
+    width: 100%;
+}
+.blog-posts-wrap {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(3, 1fr)
+}
+
+.post-link {
+    margin: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.post-wrap {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #fff;
+    box-shadow: 0px 2px 20px rgba(120, 69, 249, 0.2);
+    transition: all .25s;
+    top: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.post-wrap:hover {
+    top: 2px;
+    box-shadow: 0px 2px 20px rgba(120, 69, 249, 0.4);
+}
+
+.post-image {
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.post-body {
+    padding: 15px 30px;
+    margin: 0 auto;
+}
+
+.post-body-primary {
+    margin: 10px 0 10px 0;
+}
+
+.post-meta {
+    color: #7B7B7B;
+}
+
+.post-meta p {
+    font-size: .9rem;
+}
+
+.post-meta b {
+    font-weight: 500;
+}
+
+.post-title {
+    color: var(--primary-700);
+    padding: 5px 0 10px 0;
+}
+
+.post-title h2 {
+    font-size: 1.2rem;
+    line-height: 25px;
+    font-weight: 500;
+}
+
+.post-text p {
+    color: #7B7B7B;
+    line-height: 20px;
+    font-size: .9rem;
+}
+
+.post-body-secondary {
+    border-top: 1px solid var(--gray);
+}
+
+.post-category {
+    color: #7B7B7B;
+    padding: 15px 0 10px 0;
+}
+
+.post-category p {
+    font-size: .9rem;
+} */
+
 
 /* =========================== Footer =========================== */
 .footer {

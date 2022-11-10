@@ -63,7 +63,7 @@ const ServiceDetail = () => {
                 if (data.acknowledged) {
                     form.reset();
                     alert('review added successfully');
-                    
+
                 }
             })
             .catch(err => console.log(err))
@@ -98,7 +98,7 @@ const ServiceDetail = () => {
                             <textarea name="add_new_review" placeholder='Add a review' required></textarea>
                             <button className="custom-button">Add Review</button>
                         </form>
-                        : <div>You are not logged in. Please go and <Link to='/login'>Signin</Link> to add review</div>
+                        : <div><p className='please-login'>You are not logged in. Please go and <Link to='/login'>Login</Link> to add review</p> </div>
                 }
 
             </div>

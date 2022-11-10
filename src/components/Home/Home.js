@@ -22,7 +22,7 @@ const Home = () => {
                         services.map(service => <Service
                             service={service}
                             key={service._id}
-                        ></Service>).reverse()
+                        ></Service>)
                     }
                 </div>
 

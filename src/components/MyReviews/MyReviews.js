@@ -45,21 +45,24 @@ const MyReviews = () => {
 
             <div className="my-reviews">
                 {
-                    reviews.map(review =>
-
-                        <div key={review._id}>
-                            <div className="reviews">
-                                <div className="review-details">
-                                    <p className='service-name'><span>Service Name: </span>{review?.serviceName}</p>
-                                    <p className='service-review'><span>Review: </span>{review?.service_review}</p>
-                                </div>
-                                <div className="actions">
-                                    <Link to={`/my-reviews/update-review/${review._id}`}><FiEdit2 className='icons'></FiEdit2></Link>
-                                    <MdDelete onClick={() => handleDelete(review._id)} className='icons'></MdDelete>
+                    (reviews.length === 0) ?
+                        <div>
+                            <p className='no-reviews'>No reviews were added</p>
+                        </div> :
+                        reviews.map(review =>
+                            <div key={review._id}>
+                                <div className="reviews">
+                                    <div className="review-details">
+                                        <p className='service-name'><span>Service Name: </span>{review?.serviceName}</p>
+                                        <p className='service-review'><span>Review: </span>{review?.service_review}</p>
+                                    </div>
+                                    <div className="actions">
+                                        <Link to={`/my-reviews/update-review/${review._id}`}><FiEdit2 className='icons'></FiEdit2></Link>
+                                        <MdDelete onClick={() => handleDelete(review._id)} className='icons'></MdDelete>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    )
+                        )
                 }
             </div>
 

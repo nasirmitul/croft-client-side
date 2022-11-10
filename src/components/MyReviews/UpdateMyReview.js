@@ -1,9 +1,9 @@
 import React from 'react';
-import { json, useLoaderData } from 'react-router-dom';
+import { json, useLoaderData, useNavigate } from 'react-router-dom';
 
 const UpdateMyReview = () => {
     const updateReview = useLoaderData();
-    
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -25,16 +25,24 @@ const UpdateMyReview = () => {
         })
         .then(res => res.json())
         .then(data => {
+            if(data.modifiedCount > 0){
+                alert('review updated successfully')
+                navigate('/my-reviews')
+            }
             console.log(data);
         })
     }
 
     return (
-        <div>
-            <h2>Update Review for {updateReview.serviceName} </h2>
-
-            <form action="" onSubmit={handleSubmit}>
-                <input name='edited_value' type="text" defaultValue={updateReview.service_review} required />
+        <div className='container update-review'>
+            <div className="page-heading">
+                <p>Update Review</p>
+            </div>
+            <div className="review-title">
+                <p>Update Review for <span>{updateReview.serviceName}</span></p>
+            </div>
+            <form action="" onSubmit={handleSubmit} className="update-form">
+                <textarea name="edited_value" defaultValue={updateReview.service_review} required></textarea>
                 <button className="custom-button">Edit</button>
             </form>
         </div>
