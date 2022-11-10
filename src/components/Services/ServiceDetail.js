@@ -63,7 +63,6 @@ const ServiceDetail = () => {
                 if (data.acknowledged) {
                     form.reset();
                     alert('review added successfully');
-
                 }
             })
             .catch(err => console.log(err))

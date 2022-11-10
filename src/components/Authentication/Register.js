@@ -22,16 +22,14 @@ const Register = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        const image = form.image.value;
-
-        console.log(name, email, password, image);
+        console.log(name, email, password);
 
         createUser(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
                 updateProfile(auth.currentUser, {
-                    displayName: name, photoURL: image
+                    displayName: name, photoURL: "https://i.ibb.co/P1ZYLSv/male-avatar.png"
                 }).then(() => {
                     console.log('profile updated');
                 }).catch((error) => {

@@ -6,18 +6,30 @@ import { TiDeleteOutline } from 'react-icons/ti';
 import { Link } from 'react-router-dom';
 
 const MyReviews = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logoutUser } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
 
 
-    // const url = `http://localhost:5000/my-reviews?user_email=${user?.email}`
-    const url = `http://localhost:5000/my-reviews?user_email=nasirmitul28@gmail.com`
+    const url = `http://localhost:5000/my-reviews?user_email=${user?.email}`
+    // const url = `http://localhost:5000/my-reviews?user_email=nasirmitul28@gmail.com`
 
     useEffect(() => {
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setReviews(data))
-    }, [])
+        fetch(url, {
+            headers: {
+                authorization: localStorage.getItem('secret-token')
+            }
+        })
+            .then(res => {
+                if(res.status == 401 || res.status === 403){
+                    logoutUser();
+                }
+                return res.json()
+            })
+            .then(data => {
+                setReviews(data)
+                console.log(data.authorization);
+            })
+    }, [url])
 
     const handleDelete = id => {
         const proceed = window.confirm("Are you sure you want to delete this review?")

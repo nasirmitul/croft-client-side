@@ -11,6 +11,7 @@ import UpdateMyReview from "../components/MyReviews/UpdateMyReview";
 import ServiceDetail from "../components/Services/ServiceDetail";
 import Services from "../components/Services/Services";
 import Main from "../layouts/Main";
+import PrivateRoute from "./PrivateRoute";
 
 
 export const routes = createBrowserRouter([
@@ -33,7 +34,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/my-reviews',
-                element: <MyReviews></MyReviews>
+                element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
             },
             {
                 path: '/my-reviews/update-review/:id',
